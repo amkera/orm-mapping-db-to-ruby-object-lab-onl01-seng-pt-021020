@@ -95,8 +95,18 @@ class Student
     first_student_row = 
     DB[:conn].execute(sql)[0]
     self.new_from_db(first_student_row)
+    #returns the first student in grade 10 
   end 
-      
+  
+  def self.all_students_in_grade_X(x)
+    sql = <<-SQL
+      SELECT *
+      FROM students
+      WHERE grade = ?
+    SQL
+    
+    DB[:conn].execute(sql, x)
+  end 
   
     
   
