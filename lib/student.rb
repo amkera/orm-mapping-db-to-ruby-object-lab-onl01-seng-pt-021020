@@ -84,6 +84,8 @@ class Student
     end 
   end 
   
+  def self.
+  
     
   
   
